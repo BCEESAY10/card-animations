@@ -1,0 +1,419 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	scroll-behavior: smooth;
+}
+body {
+	background-color: #2E3537;
+	font-family: 'Arial', sans-serif;
+}
+
+:root {
+	--cards: 4;
+	--cardHeight: 40vh;
+	--cardTopPadding: 3.5em;
+	--cardMargin: 4vw;
+}
+
+.hero{
+	height: 100vh;
+	background-color: #93882b;
+}
+
+
+/* ------------------------------------------------
+Card Stacking and flawn on scroll animation
+------------------------------------------------ */
+ .stack-area {
+ 	width: 100%;
+ 	height: 300vh;
+ 	position: relative;
+ 	background: white;
+ 	display: flex;
+ }
+
+ .left {
+ 	height: 100vh;
+ 	flex-basis: 50%;
+ 	position: sticky;
+ 	top: 0;
+ 	left: 0;
+ }
+
+ .right {
+ 	height: 100vh;
+ 	flex-basis: 50%;
+ 	position: sticky;
+ 	top: 0;
+ }
+
+ /*Styling for the left elements content starts here...*/
+ .left {
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	box-sizing: border-box;
+ 	align-items: center;
+ 	flex-direction: column;
+ }
+
+ .title {
+ 	width: 420px;
+ 	font-size: 84px;
+ 	font-weight: 700;
+ 	line-height: 88px;
+ }
+
+ .sub-title {
+ 	width: 420px;
+ 	font-size: 14px;
+ 	margin-top: 30px;
+ }
+
+ .sub-title button {
+ 	font-size: 14px;
+ 	padding: 15px 30px;
+ 	background: black;
+ 	color: white;
+ 	border-radius: 8mm;
+ 	border: none;
+ 	outline: none;
+ 	cursor: pointer;
+ 	margin-top: 20px;
+ }
+
+ /*Styling for the left elements content ends here...*/
+
+ .stackCard {
+ 	width: 350px;
+ 	height: 350px;
+ 	border-radius: 25px;
+ 	margin-bottom: 10px;
+ 	position: absolute;
+ 	top: calc(50% - 175px);
+ 	left: calc(50% - 175px);
+ 	transition: 0.5s ease-in-out;
+ }
+
+ .stackCard:nth-child(1) {
+ 	background: rgb(64, 122, 255);
+ }
+
+ .stackCard:nth-child(2) {
+ 	background: rgb(221, 62, 88);
+ }
+
+ .stackCard:nth-child(3) {
+ 	background: rgb(186, 113, 245);
+ }
+
+ .stackCard:nth-child(4) {
+ 	background: rgb(247, 92, 208);
+ }
+
+ /*Styling for the card content starts here...*/
+ .stackCard {
+ 	box-sizing: border-box;
+ 	padding: 35px;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	flex-direction: column;
+ }
+
+ .sub {
+ 	font-size: 20px;
+ 	font-weight: 700;
+ }
+
+ .content {
+ 	font-size: 44px;
+ 	font-weight: 700;
+ 	line-height: 54px;
+ }
+
+ .away {
+ 	transform-origin: bottom left;
+ }
+
+
+ /* ----------------------------------------------
+ Sticky Card animation section styling
+ ---------------------------------------------- */
+
+.sticky-cards {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cards {
+	width: calc(2/3 * 100%);
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+	--index: 1;
+}
+#card2 {
+	--index: 2;
+}
+#card3 {
+	--index: 3;
+}
+#card4 {
+	--index: 4;
+}
+
+.card {
+	position: sticky;
+	top: calc(var(--index) * var(--cardTopPadding));
+}
+
+#card1 .card-body {
+	background-color: #52B2CF;
+}
+#card2 .card-body {
+	background-color: #E5A36F;
+}
+#card3 .card-body {
+	background-color: #9CADCE;
+}
+#card4 .card-body {
+	background-color: #D4AFB9;
+}
+
+.card-body {
+	box-sizing: border-box;
+	padding: 30px;
+	border-radius: 50px;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+	height: var(--cardHeight);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	transition: all 0.5s;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+
+@media screen and (max-width: 48rem) {
+	.sticky-cards{
+		padding: 1.5em;
+	}
+	.cards{
+		width: 100%;
+	}
+}
+
+/* ------------------------------------------------------
+Horizontal Scroll effect
+------------------------------------------------------ */
+
+ /* Horizontal Slide Section */
+ .horizontal-slide {
+ 	overflow: hidden;
+ }
+
+ .horizontal-cards {
+ 	display: flex;
+ 	width: 500vw;
+ 	height: 100vh;
+ 	will-change: transform;
+ }
+
+ .horizontal-card {
+ 	width: 100vw;
+ 	height: 100vh;
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ 	justify-content: center;
+ 	color: white;
+ 	font-size: 2rem;
+ 	font-weight: bold;
+ 	text-align: center;
+ 	position: relative;
+ 	overflow: hidden;
+ }
+
+ /* Individual card backgrounds */
+ .horizontal-card:nth-child(1) {
+ 	background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+ }
+
+ .horizontal-card:nth-child(2) {
+ 	background: linear-gradient(135deg, #4ecdc4, #44a08d);
+ }
+
+ .horizontal-card:nth-child(3) {
+ 	background: linear-gradient(135deg, #45b7d1, #2d5aa0);
+ }
+
+ .horizontal-card:nth-child(4) {
+ 	background: linear-gradient(135deg, #f093fb, #f5576c);
+ }
+
+ .horizontal-card:nth-child(5) {
+ 	background: linear-gradient(135deg, #4facfe, #00f2fe);
+ }
+
+ .card-content {
+ 	z-index: 2;
+ 	position: relative;
+ 	opacity: 0;
+ 	transform: translateY(50px);
+ }
+
+ .card-number {
+ 	font-size: 4rem;
+ 	margin-bottom: 1rem;
+ 	opacity: 0.8;
+ }
+
+ .card-title {
+ 	font-size: 2.5rem;
+ 	margin-bottom: 1rem;
+ 	font-weight: 300;
+ }
+
+ .card-description {
+ 	font-size: 1.3rem;
+ 	opacity: 0.9;
+ 	max-width: 400px;
+ 	line-height: 1.5;
+ 	font-weight: 300;
+ }
+
+ /* Decorative elements */
+ .card-bg-shape {
+ 	position: absolute;
+ 	width: 300px;
+ 	height: 300px;
+ 	border-radius: 50%;
+ 	background: rgba(255, 255, 255, 0.1);
+ 	top: 20%;
+ 	right: 10%;
+ 	transform: scale(0);
+ }
+
+ /* Next Section */
+ .next-section {
+ 	height: 100vh;
+ 	background: linear-gradient(135deg, #2c3e50, #3498db);
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	color: white;
+ 	font-size: 3rem;
+ 	font-weight: bold;
+ 	text-align: center;
+ }
+
+ .next-section::before {
+ 	content: "Welcome to the Next Section!";
+ }
+
+ /* Progress indicator */
+ .scroll-progress {
+ 	position: fixed;
+ 	bottom: 2rem;
+ 	left: 50%;
+ 	transform: translateX(-50%);
+ 	z-index: 1000;
+ 	display: flex;
+ 	gap: 1rem;
+ 	padding: 1rem 2rem;
+ 	background: rgba(0, 0, 0, 0.3);
+ 	border-radius: 50px;
+ 	backdrop-filter: blur(10px);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+ }
+
+.scroll-progress.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+ .progress-dot {
+ 	width: 12px;
+ 	height: 12px;
+ 	border-radius: 50%;
+ 	background: rgba(255, 255, 255, 0.4);
+ 	transition: all 0.3s ease;
+ 	cursor: pointer;
+ }
+
+ .progress-dot.active {
+ 	background: white;
+ 	transform: scale(1.3);
+ }
+
+ .progress-text {
+ 	color: white;
+ 	font-size: 0.9rem;
+ 	margin-left: 1rem;
+ 	opacity: 0.8;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+
+ 	.card-number {
+ 		font-size: 3rem;
+ 	}
+
+ 	.card-title {
+ 		font-size: 2rem;
+ 	}
+
+ 	.card-description {
+ 		font-size: 1.1rem;
+ 		max-width: 300px;
+ 	}
+
+ 	.next-section {
+ 		font-size: 2rem;
+ 		padding: 0 1rem;
+ 	}
+
+ 	.scroll-progress {
+ 		bottom: 1rem;
+ 		padding: 0.8rem 1.5rem;
+ 	}
+ }
+
+ @media (max-width: 480px) {
+
+ 	.card-number {
+ 		font-size: 2.5rem;
+ 	}
+
+ 	.card-title {
+ 		font-size: 1.8rem;
+ 	}
+
+ 	.card-description {
+ 		font-size: 1rem;
+ 		max-width: 280px;
+ 	}
+
+ 	.next-section {
+ 		font-size: 1.5rem;
+ 	}
+ }

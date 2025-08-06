@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="hero">
+
+    </section>
+    <section class="stack-area">
+        <div class="left">
+            <div class="title">Our Features</div>
+            <div class="sub-title">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente qui
+                quis, facere, cupiditate, doloremque natus ex perspiciatis ratione hic
+                corrupti adipisci ea doloribus!
+                <br />
+                <button>See More Details</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="stackCard">
+                <div class="sub">Simplified</div>
+                <div class="content">Complex tasks are now simple</div>
+            </div>
+            <div class="stackCard">
+                <div class="sub">Boost Productivity</div>
+                <div class="content">Perform Tasks in less time</div>
+            </div>
+            <div class="stackCard">
+                <div class="sub">Facilitated learning</div>
+                <div class="content">train anyone from anywhere</div>
+            </div>
+            <div class="stackCard">
+                <div class="sub">Support</div>
+                <div class="content">Now its 24/7 support</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sticky on scroll card animation -->
+    <section class="sticky-cards">
+        <ul class="cards">
+            <li class="card" id="card1">
+                <div class="card-body">
+                    <h2>Card 1</h2>
+                </div>
+            </li>
+            <li class="card" id="card2">
+                <div class="card-body">
+                    <h2>Card 2</h2>
+                </div>
+            </li>
+            <li class="card" id="card3">
+                <div class="card-body">
+                    <h2>Card 3</h2>
+                </div>
+            </li>
+            <li class="card" id="card4">
+                <div class="card-body">
+                    <h2>Card 4</h2>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- horizontal-card slider animation -->
+    <section class="horizontal-slide">
+        <div class="horizontal-cards">
+            <div class="horizontal-card">
+                <div class="card-bg-shape"></div>
+                <div class="card-content">
+                    <div class="card-number">01</div>
+                    <div class="card-title">Innovation</div>
+                    <div class="card-description">Pushing boundaries with cutting-edge technology and creative solutions
+                        that shape the future</div>
+                </div>
+            </div>
+            <div class="horizontal-card">
+                <div class="card-bg-shape"></div>
+                <div class="card-content">
+                    <div class="card-number">02</div>
+                    <div class="card-title">Design</div>
+                    <div class="card-description">Crafting beautiful experiences that delight and inspire users across
+                        all platforms</div>
+                </div>
+            </div>
+            <div class="horizontal-card">
+                <div class="card-bg-shape"></div>
+                <div class="card-content">
+                    <div class="card-number">03</div>
+                    <div class="card-title">Performance</div>
+                    <div class="card-description">Optimized for speed and efficiency across all devices and network
+                        conditions</div>
+                </div>
+            </div>
+            <div class="horizontal-card">
+                <div class="card-bg-shape"></div>
+                <div class="card-content">
+                    <div class="card-number">04</div>
+                    <div class="card-title">Community</div>
+                    <div class="card-description">Building connections and fostering collaboration in our global
+                        developer community</div>
+                </div>
+            </div>
+            <div class="horizontal-card">
+                <div class="card-bg-shape"></div>
+                <div class="card-content">
+                    <div class="card-number">05</div>
+                    <div class="card-title">Future</div>
+                    <div class="card-description">Shaping tomorrow with visionary thinking and bold action in everything
+                        we create</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-dot" data-card="0"></div>
+        <div class="progress-dot" data-card="1"></div>
+        <div class="progress-dot" data-card="2"></div>
+        <div class="progress-dot" data-card="3"></div>
+        <div class="progress-dot" data-card="4"></div>
+        <span class="progress-text">1 / 5</span>
+    </div>
+
+    <section class="next-section"></section>
+
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</body>
+</html>
