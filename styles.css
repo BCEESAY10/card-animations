@@ -138,7 +138,7 @@ Card Stacking and flawn on scroll animation
  	transform-origin: bottom left;
  }
 
- @media (max-width: 900px) {
+ @media (max-width: 768px) {
  	.stack-area {
  		flex-direction: column;
  		height: auto;
@@ -163,17 +163,14 @@ Card Stacking and flawn on scroll animation
  	.title,
  	.sub-title {
  		width: 100%;
- 		font-size: 2.2em;
  		line-height: 1.1;
  	}
 
  	.title {
- 		font-size: 2.5em;
  		line-height: 1.1;
  	}
 
  	.sub-title {
- 		font-size: 1em;
  		margin-top: 1em;
  	}
 
