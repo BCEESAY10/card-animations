@@ -49,11 +49,13 @@ if (window.innerWidth <= 768) {
       opacity: 0,
       duration: 0.8,
       delay: index * 0.2,
-      ease: "power3.out",
+      ease: "power2.out",
       scrollTrigger: {
         trigger: card,
-        start: "top 85%",
+        start: "top 90%",
+        end: "top 70%",
         toggleActions: "play none none none",
+        scrub: true,
       },
     });
   });
