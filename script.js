@@ -52,7 +52,7 @@ if (window.innerWidth <= 768) {
       ease: "power2.out",
       scrollTrigger: {
         trigger: card,
-        start: "top 90%",
+        start: `top+=${index * 50} 90%`,
         end: "top 70%",
         toggleActions: "play none none none",
         scrub: true,
