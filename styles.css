@@ -62,14 +62,14 @@ Card Stacking and flawn on scroll animation
 
  .title {
  	width: 420px;
- 	font-size: 84px;
+ 	font-size: clamp(2.5em, 6vw + 1em, 4em);
  	font-weight: 700;
  	line-height: 88px;
  }
 
  .sub-title {
  	width: 420px;
- 	font-size: 14px;
+ 	font-size: clamp(14px, 6vw + 1em, 1em);
  	margin-top: 30px;
  }
 
