@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------
 // Card stacking and flown on scroll animation
 // ----------------------------------------------------------------
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 let stackCards = document.querySelectorAll(".stackCard");
 
@@ -39,6 +41,24 @@ window.addEventListener("scroll", () => {
   }
   rotateStackCards();
 });
+
+if (window.innerWidth <= 768) {
+  gsap.utils.toArray(".stackCard").forEach((card, index) => {
+    gsap.from(card, {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      delay: index * 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+}
+
 
 // -----------------------------------------------------------------
 // Horizontal slide on scroll animation

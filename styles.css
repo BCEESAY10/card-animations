@@ -152,7 +152,6 @@ Card Stacking and flawn on scroll animation
  		width: 100%;
  		height: auto;
  		flex-basis: auto;
- 		min-height: unset;
  	}
 
  	.left {
@@ -163,27 +162,24 @@ Card Stacking and flawn on scroll animation
  	.title,
  	.sub-title {
  		width: 100%;
- 		line-height: 1.1;
- 	}
-
- 	.title {
- 		line-height: 1.1;
- 	}
-
- 	.sub-title {
- 		margin-top: 1em;
+ 		line-height: 1.2;
  	}
 
  	.stackCard {
- 		position: static;
- 		width: 90vw;
+ 		position: relative;
+ 		width: 90%;
  		max-width: 350px;
- 		height: 220px;
+ 		height: auto;
  		margin: 1em auto;
  		left: unset;
  		top: unset;
  		transform: none !important;
- 		z-index: 1 !important;
+ 		z-index: auto !important;
+ 	}
+
+ 	.content {
+ 		font-size: 1.5rem;
+ 		line-height: 1.4;
  	}
  }
 
