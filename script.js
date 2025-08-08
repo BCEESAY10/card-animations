@@ -87,7 +87,7 @@ const horizontalScroll = gsap.timeline({
       // Update progress
       const progress = self.progress;
       const cardIndex = Math.min(
-        Math.floor(progress * totalCards),
+        Math.round(progress * (totalCards - 1)),
         totalCards - 1
       );
 
