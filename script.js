@@ -124,8 +124,8 @@ gsap.utils.toArray(".card-content").forEach((content, index) => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".horizontal-slide",
-      start: () => `top+=${index * window.innerWidth * 0.8} center`,
-      end: () => `top+=${(index + 1) * window.innerWidth * 0.8} center`,
+      start: () => `top+=${index * window.innerWidth} center`,
+      end: () => `top+=${(index + 1) * window.innerWidth} center`,
       scrub: 1,
     },
   });
@@ -140,8 +140,8 @@ gsap.utils.toArray(".card-bg-shape").forEach((shape, index) => {
     ease: "back.out(1.7)",
     scrollTrigger: {
       trigger: ".horizontal-slide",
-      start: () => `top+=${index * window.innerWidth * 0.7} center`,
-      end: () => `top+=${(index + 1) * window.innerWidth * 0.7} center`,
+      start: () => `top+=${index * window.innerWidth} center`,
+      end: () => `top+=${(index + 1) * window.innerWidth} center`,
       scrub: 1,
     },
   });
@@ -160,7 +160,7 @@ progressDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     const horizontalSection = document.querySelector(".horizontal-slide");
     const sectionTop = horizontalSection.offsetTop;
-    const targetScroll = sectionTop + index * window.innerWidth * 0.8;
+    const targetScroll = sectionTop + index * window.innerWidth;
 
     window.scrollTo({
       top: targetScroll,
