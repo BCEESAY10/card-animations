@@ -79,6 +79,7 @@ const scrollProgress = document.querySelector(".scroll-progress");
 // Main horizontal scroll animation
 const horizontalScroll = gsap.timeline({
   scrollTrigger: {
+    id: "horizontalSlide",
     trigger: ".horizontal-slide",
     pin: true,
     scrub: 1,
@@ -158,9 +159,9 @@ function updateProgress(cardIndex) {
 // Click to navigate to specific cards
 progressDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
-    const horizontalSection = document.querySelector(".horizontal-slide");
-    const sectionTop = horizontalSection.offsetTop;
-    const targetScroll = sectionTop + index * window.innerWidth;
+    const trigger = ScrollTrigger.getById("horizontalSlide");
+    const start = trigger?.start || horizontalSection.offsetTop;
+    const targetScroll = start + index * window.innerWidth;
 
     window.scrollTo({
       top: targetScroll,
